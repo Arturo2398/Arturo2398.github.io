@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinaria PetCare</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header y Navegación */
+        header {
+            background-color: #4CAF50;
+            padding: 1rem;
+            color: white;
+        }
+
+        nav {
+            background-color: #45a049;
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ddd;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('/api/placeholder/1200/400');
+            background-size: cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Servicios Destacados */
+        .featured-services {
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            border: 1px solid #ddd;
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Veterinaria PetCare</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Cuidamos de tus mascotas como si fueran nuestras</h2>
+                <p>Más de 15 años de experiencia en el cuidado animal</p>
+            </div>
+        </section>
+
+        <section class="featured-services">
+            <h2>Servicios Destacados</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Consulta General</h3>
+                    <p>Revisión completa de la salud de tu mascota</p>
+                </div>
+                <div class="service-card">
+                    <h3>Vacunación</h3>
+                    <p>Programa completo de vacunación</p>
+                </div>
+                <div class="service-card">
+                    <h3>Cirugía</h3>
+                    <p>Procedimientos quirúrgicos con equipamiento moderno</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Veterinaria PetCare. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Animación suave para los enlaces de navegación
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animación para las tarjetas de servicios
+        const cards = document.querySelectorAll('.service-card');
+        cards.forEach(card => {
+            card.addEventListener('mouseover', () => {
+                card.style.backgroundColor = '#f5f5f5';
+            });
+            card.addEventListener('mouseout', () => {
+                card.style.backgroundColor = 'white';
+            });
+        });
+    </script>
+</body>
+</html>

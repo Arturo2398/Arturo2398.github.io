@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Veterinaria PetCare</title>
+    <style>
+        /* Estilos base compartidos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #4CAF50;
+            padding: 1rem;
+            color: white;
+        }
+
+        nav {
+            background-color: #45a049;
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ddd;
+        }
+
+        /* Estilos específicos de la página de contacto */
+        .contact-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .contact-form {
+            padding: 2rem;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .contact-info {
+            padding: 2rem;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 8px;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .map-container {
+            margin-top: 2rem;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 300px;
+            background-color: #ddd;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem;
+            border: 1px solid white;
+            border-radius: 4px;
+        }
+
+        .social-links a:hover {
+            background-color: white;
+            color: #4CAF50;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Veterinaria PetCare</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main class="contact-container">
+        <div class="contact-form">
+            <h2>Contáctanos</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mascota">Tipo de mascota:</label>
+                    <select id="mascota" name="mascota" required>
+                        <option value="">Seleccione una opción</option>
+                        <option value="perro">Perro</option>
+                        <option value="gato">Gato</option>
+                        <option value="ave">Ave</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="servicio">Servicio de interés:</label>
+                    <select id="servicio" name="servicio" required>
+                        <option value="">Seleccione un servicio</option>
+                        <option value="consulta">Consulta general</option>
+                        <option value="vacunacion">Vacunación</option>
+                        <option value="cirugia">Cirugía</option>
+                        <option value="emergencia">Emergencia</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" required></textarea>
+                </div>
+
+                <button type="submit">Enviar mensaje</button>
+            </form>
+        </div>
+
+        <div class="contact-info">
+            <h3>Información de contacto</h3>
+            <p>📍 Dirección: Av. Principal 123, Ciudad</p>
+            <p>📞 Teléfono: (123) 456-7890</p>
+            <p>📧 Email: info@veterinariapetcare.com</p>
+            <p>⏰ Horario:</p>
+            <p>Lunes a Viernes: 8:00 AM - 8:00 PM</p>
+            <p>Sábados: 9:00 AM - 2:00 PM</p>
+            <p>Emergencias: 24/7</p>
+
+            <div class="map-container">
+                <!-- Aquí iría el mapa de Google Maps -->
+                <img src="/api/placeholder/600/300" alt="Ubicación en el mapa" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+
+            <div class="social-links">
+                <a href="#" target="_blank">Facebook</a>
+                <a href="#" target="_blank">Instagram</a>
+                <a href="#" target="_blank">Twitter</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Veterinaria PetCare. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Validación y manejo del formulario
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validación básica
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const telefono = document.getElementById('telefono').value;
+
+            if (nombre.length < 3) {
+                alert('Por favor, ingrese un nombre válido');
+                return;
+            }
+
+            if (!email.includes('@')) {
+                alert('Por favor, ingrese un email válido');
+                return;
+            }
+
+            if (telefono.length < 6) {
+                alert('Por favor, ingrese un teléfono válido');
+                return;
+            }
+
+            // Aquí normalmente iría el código para enviar el formulario a un servidor
+            alert('¡Gracias por contactarnos! Nos pondremos en contacto contigo pronto.');
+            this.reset();
+        });
+
+        // Animación suave para los enlaces de navegación
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
