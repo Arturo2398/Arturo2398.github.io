@@ -3,11 +3,15 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://Arturo2398.github.io/Arturo2398",
+
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "devv": "cd trujiproyecto && npm start"
+    "devv": "cd trujiproyecto && npm start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "3d-electric-field": "file:",
@@ -18,6 +22,7 @@
     "three": "^0.160.1"
   },
   "devDependencies": {
+    "gh-pages": "^6.2.0",
     "vite": "^5.0.8"
   }
 }
